@@ -1,0 +1,184 @@
+ 1 #include<stdio.h>
+  2 int main()
+  3 {
+  4     int stack[100];
+  5     int top=-1;
+  6     int n,ch,val,i;
+  7     printf("Enter the size of Stack:\n" );
+  8     scanf("%d",&n);
+  9     if(n<=0||n>100)
+ 10     {
+ 11         printf("invalid size!\n");
+ 12         return 1;
+ 13     }
+ 14     while(1)
+ 15     {
+ 16         printf("\nSTACK OPERATION\n");
+ 17         printf("1.PUSH\n2.POP\n3.DISPLAY\n4.EXIT\n");
+ 18         printf("Enter your Choice:");
+ 19         scanf("%de",&ch);
+ 20         if(ch==1)
+ 21         {
+ 22             if(top==n-1)
+ 23             {
+ 24                 printf("Stack Overflow\n");
+ 25
+ 26             }
+ 27             else
+ 28             {
+ 29                 printf("Enter Value:");
+ 30                 scanf("%d",&val);
+ 31                 top++;
+ 32                 stack[top]=val;
+ 33                     printf("%dPushed\n",val);
+ 34             }
+ 35         }
+ 36         else if(ch==2)
+ 37         {
+ 38             if(top==-1)
+ 39             {
+ 40                 printf("Stack Underflow\n");
+ 41             }
+ 42             else
+ 43             {
+ 44                 printf("%d Popped\n",stack[top]);
+ 45                 top--;
+ 46             }
+ 47         }
+ 48         else if(ch==3)
+ 49         {
+ 50             if(top==-1)
+ 51             {
+ 52                 printf("Stack is Empty\n");
+ 53             }
+ 54             else
+ 55             {
+ 56                 printf("Stack elements are:\n");
+ 57             for(i=top;i>=0;i--)
+ 58             {
+ 59                 printf("%d\n",stack[i]);
+ 60             }
+ 61         }
+ 62     }
+ 63     else if(ch==4)
+ 64     {
+ 65         break;
+ 66     }
+ 67     else
+ 68     {
+ 69         printf("Invalid choice!\n");
+ 70     }
+ 71 }
+ 72 return 0;
+ 73 }
+
+
+
+OUTPUT............
+
+Enter the size of Stack:
+5
+
+STACK OPERATION
+1.PUSH
+2.POP
+3.DISPLAY
+4.EXIT
+Enter your Choice:1
+Enter Value:2
+2Pushed
+
+STACK OPERATION
+1.PUSH
+2.POP
+3.DISPLAY
+4.EXIT
+Enter your Choice:1
+Enter Value:3
+3Pushed
+
+STACK OPERATION
+1.PUSH
+2.POP
+3.DISPLAY
+4.EXIT
+Enter your Choice:1
+Enter Value:5
+5Pushed
+
+STACK OPERATION
+1.PUSH
+2.POP
+3.DISPLAY
+4.EXIT
+Enter your Choice:1
+Enter Value:4
+4Pushed
+
+STACK OPERATION
+1.PUSH
+2.POP
+3.DISPLAY
+4.EXIT
+Enter your Choice:1
+Enter Value:8
+8Pushed
+
+STACK OPERATION
+1.PUSH
+2.POP
+3.DISPLAY
+4.EXIT
+Enter your Choice:3
+Stack elements are:
+8
+4
+5
+3
+2
+
+STACK OPERATION
+1.PUSH
+2.POP
+3.DISPLAY
+4.EXIT
+Enter your Choice:2
+8 Popped
+
+STACK OPERATION
+1.PUSH
+2.POP
+3.DISPLAY
+4.EXIT
+Enter your Choice:3
+Stack elements are:
+4
+5
+3
+2
+
+STACK OPERATION
+1.PUSH
+2.POP
+3.DISPLAY
+4.EXIT
+Enter your Choice:2
+4 Popped
+
+STACK OPERATION
+1.PUSH
+2.POP
+3.DISPLAY
+4.EXIT
+Enter your Choice:3
+Stack elements are:
+5
+3
+2
+
+STACK OPERATION
+1.PUSH
+2.POP
+3.DISPLAY
+4.EXIT
+Enter your Choice:4
