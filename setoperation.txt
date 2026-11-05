@@ -1,0 +1,119 @@
+  1 #include<stdio.h>
+  2 #define SIZE 9
+  3 typedef struct{unsigned char x:1;}bit;
+  4
+  5 const int uset[SIZE]={1,2,3,4,5,6,7,8,9};
+  6 void readset(bit a[],int n);
+  7 void printset(const bit a[]);
+  8 void unionset(const bit a[],const bit b[],bit c[]);
+  9 void intersect(const bit a[],const bit b[],bit c[]);
+ 10 void difference(const bit a[],const bit b[],bit c[]);
+ 11 int main(void)
+ 12 {
+ 13     bit a[SIZE]={{0}},b[SIZE]={{0}},c[SIZE]={{0}};
+ 14     int n;
+ 15     printf("Universal set:{1,2,3,4,5,6,7,8,9}\n\n");
+ 16
+ 17     printf("No of elements in set A:");
+ 18     if(scanf("%d",&n)!=1)return 1;
+ 19     readset(a,n);
+ 20
+ 21     printf("No of elements in set B:");
+ 22     if(scanf("%d",&n)!=1)return 1;
+ 23     readset(b,n);
+ 24
+ 25     printf("\nSet A:");
+ 26     printset(a);
+ 27     printf("Set B:");
+ 28     printset(b);
+ 29
+ 30     unionset(a,b,c);
+ 31     printf("\n\t AUB=");
+ 32     printset(c);
+ 33
+ 34     intersect(a,b,c);
+ 35     printf("\n\t A intersect B=");
+ 36     printset(c);
+ 37
+ 38     difference(a,b,c);
+ 39     printf("\n\t A-B=");
+ 40     printset(c);
+ 41
+ 42     return 0;
+ 43 }
+ 44 void readset(bit a[],int n)
+ 45 {
+ 46     int i,k,x;
+ 47         if(n<0||n>SIZE)
+ 48         {
+ 49             printf("Invalid size;must be between 0 and %d\n",SIZE);
+ 50             return;
+ 51         }
+ 52     printf("Enter %d elements:",n);
+ 53     for(i=0;i<n;i++)
+ 54     {
+ 55         if(scanf("%d",&x)!=1)return;
+ 56
+ 57     for(k=0;k<SIZE;k++)
+ 58     {
+ 59         if(uset[k]==x){a[k].x=1;break;}
+ 60
+ 61 }
+ 62     if(k==SIZE)
+ 63         printf("%d is not in the universal set,ignored\n",x);
+ 64 }
+ 65 }
+ 66 void printset(const bit a[])
+ 67 {
+ 68     int k,first=1;
+ 69     printf("{");
+ 70     for(k=0;k<SIZE;k++)
+ 71     {
+ 72         if(a[k].x)
+ 73         {
+ 74             printf(first?"%d":",%d",uset[k]);
+ 75             first=0;
+ 76         }
+ 77     }
+ 78     printf("}\n");
+ 79 }
+ 80 void unionset(const bit a[],const bit b[],bit c[])
+ 81 {
+ 82     for(int k=0;k<SIZE;k++)
+ 83         c[k].x=a[k].x|b[k].x;
+ 84 }
+ 85 void intersect(const bit a[],const bit b[],bit c[])
+ 86 {
+ 87     for(int k=0;k<SIZE;k++)
+ 88         c[k].x=a[k].x&b[k].x;
+ 89 }
+ 90 void difference(const bit a[],const bit b[],bit c[])
+ 91 {
+ 92     for(int k=0;k<SIZE;k++)
+ 93         c[k].x=a[k].x&&!b[k].x;
+ 94 }
+    
+
+
+
+
+
+
+-----------------------------------------OUTPUT----------------------------------------------
+
+
+Universal set:{1,2,3,4,5,6,7,8,9}
+
+No of elements in set A:4
+Enter 4 elements:1 2 3 4
+No of elements in set B:4
+Enter 4 elements:3 4 5 6
+
+Set A:{1,2,3,4}
+Set B:{3,4,5,6}
+
+         AUB={1,2,3,4,5,6}
+
+         A intersect B={3,4}
+
+         A-B={1,2}
