@@ -1,0 +1,140 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct Node
+{
+    int data;
+    struct Node*prev;
+    struct Node*next;
+};
+struct Node*head=NULL;
+void InsertAtBegining()
+{
+    struct Node*newNode;
+    int value;
+    printf("Enter the value:");
+    scanf("%d",&value);
+    newNode=(struct Node*)malloc(sizeof(struct Node));
+    newNode->data=value;
+    newNode->prev=NULL;
+    newNode->next=head;
+    if(head!=NULL)
+    {
+        head->prev=newNode;
+    }
+    head=newNode;
+}
+void InsertAtEnd()
+{
+    struct Node*newNode;
+    struct Node*temp;
+    int value;
+    printf("Enter the value:");
+    scanf("%d",&value);
+    newNode=(struct Node*)malloc(sizeof(struct Node));
+    newNode->data=value;
+    newNode->next=NULL;
+    if(head==NULL)
+{
+    newNode->prev=NULL;
+    head=newNode;
+}
+else
+{
+    temp=head;
+    while(temp->next!=NULL)
+    {
+        temp=temp->next;
+    }
+    temp->next=newNode;
+    newNode->prev=temp;
+}
+}
+void Displayforward()
+{
+    struct Node*temp;
+    temp=head;
+    while(temp!=NULL)
+    {
+        printf("%d",temp->data);
+        temp=temp->next;
+    }
+}
+void DeleteNode()
+{
+    struct Node*temp;
+    int value;
+    printf("Enter value to delete:");
+    scanf("%d",&value);
+    temp=head;
+    while(temp!=NULL&&temp->data!=value)
+    {
+        temp=temp->next;
+    }
+    if(temp==NULL)
+    {
+        printf("Node not found");
+        return;
+    }
+    if(temp->prev!=NULL)
+    {
+        temp->next->prev=temp->prev;
+    }
+    else
+    {
+        head=temp->next;
+    }
+    if(temp->next!=NULL)
+    {
+        temp->next->prev=temp->prev;
+    }
+    free(temp);
+}
+void DisplayReverse()
+{
+    struct Node*temp;
+    if(head==NULL)
+        return;
+    temp=head;
+    while(temp->next!=NULL)
+    {
+        temp=temp->next;
+    }
+    while(temp!=NULL)
+    {
+        printf("%d",temp->data);
+        temp=temp->prev;
+    }
+}
+int main()
+{
+    int ch;
+    while(1)
+    {
+        printf("\n1.Insert At Begining\n2.Inser At End\n3.Display Forward\n4.Delete A Node\n5.Display Reverse\n6.Exit\n");
+        printf("Enter Your Choice:");
+        scanf("%d",&ch);
+        switch(ch)
+        {
+            case 1:
+                InsertAtBegining();
+                    break;
+            case 2:
+                InsertAtEnd();
+                    break;
+            case 3:
+                Displayforward();
+                    break;
+            case 4:
+                DeleteNode();
+                    break;
+            case 5:
+                DisplayReverse();
+                    break;
+            case 6:
+                exit(0);
+            default:
+                printf("Invalid Choice!");
+        }
+    }
+    return 0;
+}
