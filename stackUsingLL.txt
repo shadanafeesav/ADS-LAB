@@ -71,3 +71,61 @@ struct Node *top = NULL;
     }
      return 0;
 }
+
+
+
+
+----------------------------------------output-------------------------------------------
+
+
+-- Stack using Linked List --
+1. Push
+2. Pop
+3. Display
+4. Exit
+Enter your choice: 1
+Enter value to push: 20
+20 pushed to stack
+
+-- Stack using Linked List --
+1. Push
+2. Pop
+3. Display
+4. Exit
+Enter your choice: 1
+Enter value to push: 30
+30 pushed to stack
+
+-- Stack using Linked List --
+1. Push
+2. Pop
+3. Display
+4. Exit
+Enter your choice: 1
+Enter value to push: 40
+40 pushed to stack
+
+-- Stack using Linked List --
+1. Push
+2. Pop
+3. Display
+4. Exit
+Enter your choice: 2
+40 popped from stack
+
+-- Stack using Linked List --
+1. Push
+2. Pop
+3. Display
+4. Exit
+Enter your choice: 3
+Stack elements: 30->20->NULL
+
+-- Stack using Linked List --
+1. Push
+2. Pop
+3. Display
+4. Exit
+Enter your choice: 4
+Exiting
+
