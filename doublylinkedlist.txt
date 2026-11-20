@@ -138,3 +138,93 @@ int main()
     }
     return 0;
 }
+
+
+
+
+
+
+
+
+  ----------------------------------------- output-------------------------------------
+
+1. Insert at beginning
+2. Insert at end
+3. Display forward
+4. Delete a node
+5. Display reverse
+6. Exit
+Enter choice: 1
+Enter data: 10
+
+1. Insert at beginning
+2. Insert at end
+3. Display forward
+4. Delete a node
+5. Display reverse
+6. Exit
+Enter choice: 1
+Enter data: 20
+
+1. Insert at beginning
+2. Insert at end
+3. Display forward
+4. Delete a node
+5. Display reverse
+6. Exit
+Enter choice: 2
+Enter data: 30
+
+1. Insert at beginning
+2. Insert at end
+3. Display forward
+4. Delete a node
+5. Display reverse
+6. Exit
+Enter choice: 2
+Enter data: 40
+
+1. Insert at beginning
+2. Insert at end
+3. Display forward
+4. Delete a node
+5. Display reverse
+6. Exit
+Enter choice: 3
+20 <-> 10 <-> 30 <-> 40 <-> NULL
+
+1. Insert at beginning
+2. Insert at end
+3. Display forward
+4. Delete a node
+5. Display reverse
+6. Exit
+Enter choice: 4
+Enter value to delete: 30
+Node deleted
+
+1. Insert at beginning
+2. Insert at end
+3. Display forward
+4. Delete a node
+5. Display reverse
+6. Exit
+Enter choice: 3
+20 <-> 10 <-> 40 <-> NULL
+
+1. Insert at beginning
+2. Insert at end
+3. Display forward
+4. Delete a node
+5. Display reverse
+6. Exit
+Enter choice: 5
+40 <-> 10 <-> 20 <-> NULL
+
+1. Insert at beginning
+2. Insert at end
+3. Display forward
+4. Delete a node
+5. Display reverse
+6. Exit
+Enter choice: 6
