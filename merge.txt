@@ -85,3 +85,18 @@ void main()
           printf("%d",c[i]);
       }
   }
+
+
+
+
+--------------------------------output-----------------------------------------
+Enter 5 elements of the first array:
+2 8 5 9 2
+Sorted first array:
+2 2 5 8 9
+Enter 5 elements of the second array:
+5 3 2 8 5
+Sorted second array:
+2 3 5 5 8
+Merged sorted array:
+2 2 2 3 5 5 5 8 8 9
